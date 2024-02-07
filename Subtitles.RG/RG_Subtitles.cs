@@ -21,7 +21,7 @@ namespace IllusionPlugins
         private static string currentFile;
         private static string currentText;
 
-        internal static class Hooks
+        static class Hooks
         {
             // H-Scene initialization
             [HarmonyPostfix]
@@ -70,7 +70,7 @@ namespace IllusionPlugins
                 foreach (var female in weirdDictionary)
                 {
                     if (female == null) continue;
-                    foreach(var mode in female.Values)
+                    foreach (var mode in female.Values)
                         foreach (var sheet in mode.Values)
                             foreach (var kind in sheet.Values)
                                 foreach (var voiceID in kind.Values)

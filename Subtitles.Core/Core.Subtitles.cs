@@ -4,9 +4,16 @@ using System;
 // BepInEx
 using BepInEx;
 using BepInEx.Configuration;
-using BepInEx.IL2CPP;
 using HarmonyLib;
+#if RG
+using BepInEx.IL2CPP;
 using UnhollowerRuntimeLib;
+#elif HC
+using BepInEx.Unity.IL2CPP;
+using Il2CppInterop.Runtime;
+using Il2CppInterop.Runtime.Injection;
+using TMPro;
+#endif
 
 // Unity
 using UnityEngine;
@@ -27,13 +34,16 @@ namespace IllusionPlugins
         public const string PluginNameInternal = Constants.Prefix + "_Subtitles";
 
         // BepInEx Config
-        internal static ConfigEntry<bool> EnableConfig;
+        static ConfigEntry<bool> EnableConfig;
 
         // Plugin variables
         static GameObject canvasObject;
+        static new BepInEx.Logging.ManualLogSource Log;
 
         public override void Load()
         {
+            Log = base.Log;
+
             EnableConfig = Config.Bind("General",
                                  "Enable Subtitles",
                                  true,
@@ -54,7 +64,10 @@ namespace IllusionPlugins
         /// <param name="scene"></param>
         public static void MakeCanvas(Scene scene)
         {
-            if (canvasObject != null) return;
+            if (canvasObject != null)
+            {
+                GameObject.Destroy(canvasObject);
+            }
 
             // Creating Canvas object
             canvasObject = new GameObject("SubtitleCanvas");
@@ -68,7 +81,11 @@ namespace IllusionPlugins
             public SubtitlesCanvas(IntPtr handle) : base(handle) { }
 
             static GameObject subtitleObject;
+#if RG
             static Text subtitle;
+#elif HC
+            static TextMeshProUGUI subtitle;
+#endif
 
             static float time = 0;
             static float clipLenght = 0;
@@ -89,6 +106,7 @@ namespace IllusionPlugins
                 subtitleObject = new GameObject("SubtitleText");
                 subtitleObject.transform.SetParent(canvasObject.transform);
 
+#if RG
                 int fontSize = (int)(Screen.height / 25.0f);
 
                 RectTransform subtitleRect = subtitleObject.AddComponent<RectTransform>();
@@ -107,6 +125,40 @@ namespace IllusionPlugins
 
                 var outline = subtitleObject.AddComponent<Outline>();
                 outline.effectDistance = new Vector2(2.0f, -2.0f);
+#elif HC
+
+                int fontSize = (int)(Screen.height / 30.0f);
+
+                RectTransform subtitleRect = subtitleObject.AddComponent<RectTransform>();
+                subtitleRect.pivot = new Vector2(0, -1);
+                subtitleRect.sizeDelta = new Vector2(Screen.width * 0.990f, fontSize + (fontSize * 0.05f));
+
+                static T getResource<T>(string name) where T : UnityEngine.Object
+                {
+                    var objs = Resources.FindObjectsOfTypeAll(Il2CppType.Of<T>());
+                    for (var i = objs.Length - 1; i >= 0; --i)
+                    {
+                        var obj = objs[i];
+                        if (obj.name == name)
+                        {
+                            var ret = obj.TryCast<T>();
+                            return ret;
+                        }
+                    }
+                    return null;
+                }
+
+                subtitle = subtitleObject.AddComponent<TextMeshProUGUI>();
+                subtitle.font = getResource<TMP_FontAsset>("tmp_hc_default");
+                subtitle.fontSharedMaterial = getResource<Material>("tmp_hc_default t_outline_bold");
+
+                subtitle.fontSize = fontSize;
+                subtitle.alignment = TextAlignmentOptions.Bottom;
+                subtitle.overflowMode = TextOverflowModes.Overflow;
+                subtitle.enableWordWrapping = true;
+                subtitle.color = Color.white;
+                subtitle.text = "";
+#endif
             }
 
             /// <summary>

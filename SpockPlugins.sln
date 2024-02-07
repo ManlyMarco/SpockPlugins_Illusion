@@ -5,19 +5,21 @@ VisualStudioVersion = 17.3.32825.248
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HS2_GirlsEntrance", "HS2_GirlsEntrance\HS2_GirlsEntrance.csproj", "{05B5D1EC-6616-4868-B62C-56CF29E50F0A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RG_Cheats", "RG_Cheats\RG_Cheats.csproj", "{3437DB32-52C6-44DB-95DE-3B3E54DA7E92}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RG_Cheats", "RG_Cheats\RG_Cheats.csproj", "{3437DB32-52C6-44DB-95DE-3B3E54DA7E92}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RG_LockHMenu", "RG_LockHMenu\RG_LockHMenu.csproj", "{7DF86181-78B7-41CD-9B9B-22E4BBAB4407}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RG_LockHMenu", "RG_LockHMenu\RG_LockHMenu.csproj", "{7DF86181-78B7-41CD-9B9B-22E4BBAB4407}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Subtitles", "Subtitles", "{B82E3253-140D-4D6E-A7B9-5DFC949FB08B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RG.Subtitles", "Subtitles.RG\RG.Subtitles.csproj", "{3E14E44C-1BB5-4BCC-871A-6235D0D21CE0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RG_Subtitles", "Subtitles.RG\RG_Subtitles.csproj", "{3E14E44C-1BB5-4BCC-871A-6235D0D21CE0}"
 EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Core.Subtitles", "Subtitles.Core\Core.Subtitles.shproj", "{8BEED964-DE81-41D3-A294-0677F14DAEA5}"
 EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Shared", "Shared\Shared.shproj", "{2DE27BE2-E734-4C64-A310-7BB06DC0FE4F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RG_MaterialMod", "RG_MaterialMod\RG_MaterialMod.csproj", "{D7B27052-28F5-481B-B972-8A05293F79CF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RG_MaterialMod", "RG_MaterialMod\RG_MaterialMod.csproj", "{D7B27052-28F5-481B-B972-8A05293F79CF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HC_Subtitles", "Subtitles.HC\HC_Subtitles.csproj", "{B236A805-730C-4E9C-97DD-69B0FEDE03A4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{D7B27052-28F5-481B-B972-8A05293F79CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D7B27052-28F5-481B-B972-8A05293F79CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D7B27052-28F5-481B-B972-8A05293F79CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B236A805-730C-4E9C-97DD-69B0FEDE03A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B236A805-730C-4E9C-97DD-69B0FEDE03A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B236A805-730C-4E9C-97DD-69B0FEDE03A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B236A805-730C-4E9C-97DD-69B0FEDE03A4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -52,15 +58,20 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{3E14E44C-1BB5-4BCC-871A-6235D0D21CE0} = {B82E3253-140D-4D6E-A7B9-5DFC949FB08B}
 		{8BEED964-DE81-41D3-A294-0677F14DAEA5} = {B82E3253-140D-4D6E-A7B9-5DFC949FB08B}
+		{B236A805-730C-4E9C-97DD-69B0FEDE03A4} = {B82E3253-140D-4D6E-A7B9-5DFC949FB08B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1119A3B2-251E-4892-A95E-06F5BDDF8435}
 	EndGlobalSection
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		Shared\Shared.projitems*{2de27be2-e734-4c64-a310-7bb06dc0fe4f}*SharedItemsImports = 13
-		Shared\Shared.projitems*{3e14e44c-1bb5-4bcc-871a-6235d0d21ce0}*SharedItemsImports = 4
-		Subtitles.Core\Core.Subtitles.projitems*{3e14e44c-1bb5-4bcc-871a-6235d0d21ce0}*SharedItemsImports = 4
+		Shared\Shared.projitems*{3437db32-52c6-44db-95de-3b3e54da7e92}*SharedItemsImports = 5
+		Shared\Shared.projitems*{3e14e44c-1bb5-4bcc-871a-6235d0d21ce0}*SharedItemsImports = 5
+		Subtitles.Core\Core.Subtitles.projitems*{3e14e44c-1bb5-4bcc-871a-6235d0d21ce0}*SharedItemsImports = 5
+		Shared\Shared.projitems*{7df86181-78b7-41cd-9b9b-22e4bbab4407}*SharedItemsImports = 5
 		Subtitles.Core\Core.Subtitles.projitems*{8beed964-de81-41d3-a294-0677f14daea5}*SharedItemsImports = 13
-		Shared\Shared.projitems*{d7b27052-28f5-481b-b972-8a05293f79cf}*SharedItemsImports = 4
+		Shared\Shared.projitems*{b236a805-730c-4e9c-97dd-69b0fede03a4}*SharedItemsImports = 5
+		Subtitles.Core\Core.Subtitles.projitems*{b236a805-730c-4e9c-97dd-69b0fede03a4}*SharedItemsImports = 5
+		Shared\Shared.projitems*{d7b27052-28f5-481b-b972-8a05293f79cf}*SharedItemsImports = 5
 	EndGlobalSection
 EndGlobal
