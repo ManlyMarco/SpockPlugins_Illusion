@@ -5,14 +5,11 @@ using System;
 // BepInEx
 using BepInEx;
 using BepInEx.Configuration;
-using HarmonyLib;
-#if RG
-using BepInEx.IL2CPP;
-using UnhollowerRuntimeLib;
-#elif HC
 using BepInEx.Unity.IL2CPP;
+using HarmonyLib;
 using Il2CppInterop.Runtime;
 using Il2CppInterop.Runtime.Injection;
+#if HC
 using TMPro;
 #endif
 
