@@ -7,13 +7,9 @@ using System.Linq;
 
 // BepInEx
 using BepInEx;
-using BepInEx.Configuration;
-using BepInEx.IL2CPP;
-using BepInEx.IL2CPP.Utils;
-using BepInEx.IL2CPP.Utils.Collections;
 using BepInEx.Logging;
+using BepInEx.Unity.IL2CPP;
 using HarmonyLib;
-using UnhollowerRuntimeLib;
 
 // Unity
 using UnityEngine;
@@ -30,6 +26,7 @@ using ExtensibleSaveFormat;
 using RG;
 using Chara;
 using CharaCustom;
+using Il2CppInterop.Runtime.Injection;
 
 
 namespace IllusionPlugins

@@ -11,12 +11,6 @@ using System.Runtime.Serialization.Formatters.Binary;
 // BepInEx
 using BepInEx;
 using BepInEx.Configuration;
-using BepInEx.IL2CPP;
-using BepInEx.IL2CPP.Utils;
-using BepInEx.IL2CPP.Utils.Collections;
-using Il2CppSystem.Text;
-using HarmonyLib;
-using UnhollowerRuntimeLib;
 
 // Unity
 using UnityEngine;

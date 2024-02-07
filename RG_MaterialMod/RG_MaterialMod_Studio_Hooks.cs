@@ -5,8 +5,6 @@ using HarmonyLib;
 using Il2CppSystem;
 using Il2CppSystem.Collections.Generic;
 using Il2CppSystem.IO;
-using UnhollowerBaseLib;
-using UnhollowerRuntimeLib;
 
 // Unity
 using UnityEngine;

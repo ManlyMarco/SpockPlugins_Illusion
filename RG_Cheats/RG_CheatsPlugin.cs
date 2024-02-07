@@ -3,10 +3,9 @@ using System.IO;
 
 using BepInEx;
 using BepInEx.Configuration;
-using BepInEx.IL2CPP;
+using BepInEx.Unity.IL2CPP;
 using HarmonyLib;
-using UnhollowerRuntimeLib;
-
+using Il2CppInterop.Runtime;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;

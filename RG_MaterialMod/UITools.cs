@@ -7,8 +7,6 @@ using System.Threading.Tasks;
 
 // BepInEx
 using BepInEx;
-using UnhollowerBaseLib;
-using UnhollowerRuntimeLib;
 using HarmonyLib;
 
 // Unity 
