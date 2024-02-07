@@ -1,0 +1,41 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<RootNamespace>IllusionPlugins</RootNamespace>
+		
+		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+		<Nullable>warnings</Nullable>
+		<LangVersion>latest</LangVersion>
+		
+		<OutputPath>..\bin</OutputPath>
+		<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+		
+		<GenerateAssemblyInfo>False</GenerateAssemblyInfo>
+
+		<DebugType>embedded</DebugType>
+		<WarningLevel>9999</WarningLevel>
+
+		<DefineConstants>$(DefineConstants);HC;IL2CPP</DefineConstants>
+	</PropertyGroup>
+
+	<Target Name="PostBuild" AfterTargets="PostBuildEvent" Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+		<Delete Files="$(OutputPath)\$(AssemblyName).deps.json" />
+	</Target>
+
+	<ItemGroup>
+		<PackageReference Include="BepInEx.Analyzers" Version="1.0.8">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="BepInEx.Unity.IL2CPP" Version="6.0.0-be.*" IncludeAssets="compile" />
+		<PackageReference Include="IllusionLibs.HoneyCome.Assembly-CSharp" Version="2023.99.12.15" />
+		<PackageReference Include="IllusionLibs.HoneyCome.UnityEngine.AudioModule" Version="2021.3.14.3" />
+		<PackageReference Include="IllusionLibs.HoneyCome.UnityEngine.UI" Version="2021.3.14.3" />
+	</ItemGroup>
+
+	<Import Project="..\Subtitles.Core\Core.Subtitles.projitems" Label="Shared" />
+
+	<Import Project="..\Shared\Shared.projitems" Label="Shared" />
+
+</Project>
