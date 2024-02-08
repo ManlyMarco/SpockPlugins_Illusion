@@ -23,89 +23,10 @@
 		<Delete Files="$(OutputPath)\$(AssemblyName).deps.json" />
 	</Target>
 
-	<ItemGroup>
-		<PackageReference Include="BepInEx.Analyzers" Version="1.0.8">
-			<PrivateAssets>all</PrivateAssets>
-			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-		</PackageReference>
-		<PackageReference Include="BepInEx.Unity.IL2CPP" Version="6.0.0-be.*" IncludeAssets="compile" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <Reference Include="Assembly-CSharp">
-	    <HintPath>..\lib\Assembly-CSharp.dll</HintPath>
-	    <Private>False</Private>
-	  </Reference>
-	  <Reference Include="Assembly-CSharp-firstpass">
-	    <HintPath>..\lib\Assembly-CSharp-firstpass.dll</HintPath>
-	    <Private>False</Private>
-	  </Reference>
-	  <Reference Include="Cinemachine">
-	    <HintPath>..\lib\Cinemachine.dll</HintPath>
-	    <Private>False</Private>
-	  </Reference>
-	  <Reference Include="IL">
-	    <HintPath>..\lib\IL.dll</HintPath>
-	    <Private>False</Private>
-	  </Reference>
-	  <Reference Include="Il2Cppmscorlib">
-	    <HintPath>..\lib\Il2Cppmscorlib.dll</HintPath>
-	    <Private>False</Private>
-	  </Reference>
-	  <Reference Include="Ionic.Zip">
-	    <HintPath>..\lib\Ionic.Zip.dll</HintPath>
-	    <Private>False</Private>
-	  </Reference>
-	  <Reference Include="MessagePack">
-	    <HintPath>..\lib\MessagePack.dll</HintPath>
-	    <Private>False</Private>
-	  </Reference>
-	  <Reference Include="MessagePack.Annotations">
-	    <HintPath>..\lib\MessagePack.Annotations.dll</HintPath>
-	    <Private>False</Private>
-	  </Reference>
-	  <Reference Include="UniRx">
-	    <HintPath>..\lib\UniRx.dll</HintPath>
-	    <Private>False</Private>
-	  </Reference>
-	  <Reference Include="UniTask">
-	    <HintPath>..\lib\UniTask.dll</HintPath>
-	    <Private>False</Private>
-	  </Reference>
-	  <Reference Include="UnityEngine">
-	    <HintPath>..\lib\UnityEngine.dll</HintPath>
-	    <Private>False</Private>
-	  </Reference>
-	  <Reference Include="UnityEngine.AssetBundleModule">
-	    <HintPath>..\lib\UnityEngine.AssetBundleModule.dll</HintPath>
-	    <Private>False</Private>
-	  </Reference>
-	  <Reference Include="UnityEngine.AudioModule">
-	    <HintPath>..\lib\UnityEngine.AudioModule.dll</HintPath>
-	    <Private>False</Private>
-	  </Reference>
-	  <Reference Include="UnityEngine.CoreModule">
-	    <HintPath>..\lib\UnityEngine.CoreModule.dll</HintPath>
-	    <Private>False</Private>
-	  </Reference>
-	  <Reference Include="UnityEngine.InputLegacyModule">
-	    <HintPath>..\lib\UnityEngine.InputLegacyModule.dll</HintPath>
-	    <Private>False</Private>
-	  </Reference>
-	  <Reference Include="UnityEngine.TextRenderingModule">
-	    <HintPath>..\lib\UnityEngine.TextRenderingModule.dll</HintPath>
-	    <Private>False</Private>
-	  </Reference>
-	  <Reference Include="UnityEngine.UI">
-	    <HintPath>..\lib\UnityEngine.UI.dll</HintPath>
-	    <Private>False</Private>
-	  </Reference>
-	  <Reference Include="UnityEngine.UIModule">
-	    <HintPath>..\lib\UnityEngine.UIModule.dll</HintPath>
-	    <Private>False</Private>
-	  </Reference>
-	</ItemGroup>
-
 	<Import Project="..\Shared\Shared.projitems" Label="Shared" />
+
+	<ItemGroup>
+	  <PackageReference Include="IllusionLibs.RoomGirl.All" Version="2023.2.10" />
+	</ItemGroup>
 
 </Project>
